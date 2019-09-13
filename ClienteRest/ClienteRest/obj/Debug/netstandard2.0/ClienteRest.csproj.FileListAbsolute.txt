@@ -1,9 +1,9 @@
 C:\Users\bryan.palmafgksa\Desktop\Xamarin\ClienteRest\ClienteRest\ClienteRest\bin\Debug\netstandard2.0\ClienteRest.deps.json
 C:\Users\bryan.palmafgksa\Desktop\Xamarin\ClienteRest\ClienteRest\ClienteRest\bin\Debug\netstandard2.0\ClienteRest.dll
 C:\Users\bryan.palmafgksa\Desktop\Xamarin\ClienteRest\ClienteRest\ClienteRest\bin\Debug\netstandard2.0\ClienteRest.pdb
-C:\Users\bryan.palmafgksa\Desktop\Xamarin\ClienteRest\ClienteRest\ClienteRest\obj\Debug\netstandard2.0\ClienteRest.csprojAssemblyReference.cache
 C:\Users\bryan.palmafgksa\Desktop\Xamarin\ClienteRest\ClienteRest\ClienteRest\obj\Debug\netstandard2.0\ClienteRest.csproj.CoreCompileInputs.cache
 C:\Users\bryan.palmafgksa\Desktop\Xamarin\ClienteRest\ClienteRest\ClienteRest\obj\Debug\netstandard2.0\ClienteRest.AssemblyInfoInputs.cache
 C:\Users\bryan.palmafgksa\Desktop\Xamarin\ClienteRest\ClienteRest\ClienteRest\obj\Debug\netstandard2.0\ClienteRest.AssemblyInfo.cs
 C:\Users\bryan.palmafgksa\Desktop\Xamarin\ClienteRest\ClienteRest\ClienteRest\obj\Debug\netstandard2.0\ClienteRest.dll
 C:\Users\bryan.palmafgksa\Desktop\Xamarin\ClienteRest\ClienteRest\ClienteRest\obj\Debug\netstandard2.0\ClienteRest.pdb
+C:\Users\bryan.palmafgksa\Desktop\Xamarin\ClienteRest\ClienteRest\ClienteRest\obj\Debug\netstandard2.0\ClienteRest.csprojAssemblyReference.cache

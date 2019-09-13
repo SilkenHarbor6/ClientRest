@@ -1,7 +1,12 @@
-﻿using ClienteRest.Model;
+﻿using Acr.UserDialogs;
+using ClienteRest.Model;
+using Newtonsoft.Json;
+using Plugin.Connectivity;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,12 +15,24 @@ namespace ClienteRest.Service
 {
     public class ApiService
     {
+        private String url = "http://cdsapirest.somee.com/api/";
         public HttpClient cliente = new HttpClient();
-        public async Task<Response> GetAll<T>(String url)
+        public async Task<Response> GetAll<T>(String Controller)
         {
+            var wifi = Plugin.Connectivity.Abstractions.ConnectionType.WiFi;
+            var connectionTypes = CrossConnectivity.Current.ConnectionTypes;
+            if (!connectionTypes.Contains(wifi))
+            {
+                return new Response
+                {
+                    isSuccess = false,
+                    Message= "No posee conexion a internet"
+                };
+            }
             try
             {
-                var response = await cliente.GetAsync(url);
+                Loading();
+                var response = await cliente.GetAsync(url+Controller);
                 if (!response.IsSuccessStatusCode)
                 {
                     return new Response
@@ -25,7 +42,7 @@ namespace ClienteRest.Service
                     };
                 }
                 var result = await response.Content.ReadAsStringAsync();
-                var list = Newtonsoft.Json.JsonConvert.DeserializeObject<ObservableCollection<T>>(result);
+                var list = JsonConvert.DeserializeObject<ObservableCollection<T>>(result);
                 return new Response
                 {
                     isSuccess = true,
@@ -39,6 +56,34 @@ namespace ClienteRest.Service
                     isSuccess = false,
                     Message = "Error al cargar los datos"
                 };
+            }
+        }
+        public async Task<bool> Post<T>(String Controller, T item)
+        {
+            try
+            {
+                Loading();
+                var json = JsonConvert.SerializeObject(item);
+                var content = new StringContent(json,Encoding.UTF8,"application/json");
+                HttpResponseMessage response = await cliente.PostAsync(url+Controller, content);
+                String mensaje = JsonConvert.DeserializeObject<String>(await response.Content.ReadAsStringAsync());
+                Debug.Print(mensaje);
+                if (!response.IsSuccessStatusCode)
+                {
+                    return false;
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        private async void Loading()
+        {
+            using (UserDialogs.Instance.Loading("Cargando", null, null, true, MaskType.Black))
+            {
+                await Task.Delay(4000);
             }
         }
     }

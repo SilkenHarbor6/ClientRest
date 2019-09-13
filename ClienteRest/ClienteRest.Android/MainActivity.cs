@@ -16,12 +16,10 @@ namespace ClienteRest.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
-
+            Acr.UserDialogs.UserDialogs.Init(this);
             base.OnCreate(bundle);
-
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
-            Acr.UserDialogs.UserDialogs.Init(this);
         }
     }
 }
