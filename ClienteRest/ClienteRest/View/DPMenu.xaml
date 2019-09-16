@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pg:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pg="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             x:Class="ClienteRest.View.DPMenu">
+    <Frame BackgroundColor="White" Padding="10" VerticalOptions="Center" HorizontalOptions="Center">
+        <StackLayout>
+            <Button Text="Editar" Command="{Binding Update}"/>
+            <Button Text="Eliminar" Command="{Binding Delete}"/>
+        </StackLayout>
+    </Frame>
+      
+</pg:PopupPage>

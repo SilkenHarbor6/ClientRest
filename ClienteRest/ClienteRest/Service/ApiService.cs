@@ -66,8 +66,44 @@ namespace ClienteRest.Service
                 var json = JsonConvert.SerializeObject(item);
                 var content = new StringContent(json,Encoding.UTF8,"application/json");
                 HttpResponseMessage response = await cliente.PostAsync(url+Controller, content);
-                String mensaje = JsonConvert.DeserializeObject<String>(await response.Content.ReadAsStringAsync());
-                Debug.Print(mensaje);
+                //String mensaje = JsonConvert.DeserializeObject<String>(await response.Content.ReadAsStringAsync());
+                //Debug.Print(mensaje);
+                if (!response.IsSuccessStatusCode)
+                {
+                    return false;
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        public async Task<bool> Delete<T>(String controller, int id)
+        {
+            try
+            {
+                Loading();
+                HttpResponseMessage response = await cliente.DeleteAsync(url + controller+id.ToString());
+                if (!response.IsSuccessStatusCode)
+                {
+                    return false;
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        public async Task<bool> Put<T>(String controller,int id, T item)
+        {
+            try
+            {
+                Loading();
+                var json = JsonConvert.SerializeObject(item);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                HttpResponseMessage response = await cliente.PutAsync(url + controller + id, content);
                 if (!response.IsSuccessStatusCode)
                 {
                     return false;

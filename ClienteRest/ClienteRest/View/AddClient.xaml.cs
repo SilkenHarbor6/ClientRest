@@ -1,4 +1,5 @@
-﻿using ClienteRest.ViewModel;
+﻿using ClienteRest.Model;
+using ClienteRest.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +14,10 @@ namespace ClienteRest.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AddClient : ContentPage
 	{
-		public AddClient ()
+		public AddClient (String action,Cliente item=default(Cliente))
 		{
 			InitializeComponent ();
-            BindingContext = new AddClientViewModel();
+            BindingContext = new AddClientViewModel(action,item);
 		}
 	}
 }

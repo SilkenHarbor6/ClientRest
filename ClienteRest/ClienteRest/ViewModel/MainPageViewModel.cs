@@ -6,6 +6,7 @@
     using ClienteRest.View;
     using GalaSoft.MvvmLight.Command;
     using Plugin.Connectivity;
+    using Rg.Plugins.Popup.Services;
     using System.Collections.ObjectModel;
     using System.Threading.Tasks;
     using System.Windows.Input;
@@ -14,6 +15,7 @@
     {
         #region Atributos
         private ApiService api;
+        private Cliente _cliente;
         private bool isRefreshing;
         #endregion
         #region Propiedades
@@ -27,6 +29,19 @@
             set
             {
                 isRefreshing = value; OnPropertyChanged();
+            }
+        }
+        public Cliente cliente
+        {
+            get
+            {
+                return _cliente;
+            }
+            set
+            {
+                _cliente = value;
+                OnPropertyChanged("cliente");
+                PMenu();
             }
         }
         #endregion
@@ -46,6 +61,13 @@
                 return new RelayCommand(Add);
             }
         }
+        public ICommand ClienteTap
+        {
+            get
+            {
+                return new RelayCommand(PMenu);
+            }
+        }
         #endregion
         #region Metodos
         public async void LoadClients()
@@ -63,7 +85,11 @@
         }
         public void Add()
         {
-            App.Current.MainPage.Navigation.PushAsync(new AddClient());
+            App.Current.MainPage.Navigation.PushAsync(new AddClient("Agregar"));
+        }
+        public void PMenu()
+        {
+            PopupNavigation.PushAsync(new DPMenu(cliente));
         }
         #endregion
 

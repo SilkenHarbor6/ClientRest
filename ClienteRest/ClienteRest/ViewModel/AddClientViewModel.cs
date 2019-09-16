@@ -18,6 +18,7 @@ namespace ClienteRest.ViewModel
         private string _direccion { get; set; }
         private string _telefono { get; set; }
         private ApiService api;
+        private Cliente item;
         #endregion
         #region Propiedad
         public string nombre
@@ -42,6 +43,7 @@ namespace ClienteRest.ViewModel
                 _apellido = value;OnPropertyChanged("apellido");
             }
         }
+        public String action { get; set; }
         public string direccion
         {
             get
@@ -66,9 +68,19 @@ namespace ClienteRest.ViewModel
         }
         #endregion
         #region Constructor
-        public AddClientViewModel()
+        public AddClientViewModel(String action,Cliente item=default(Cliente))
         {
             api = new ApiService();
+            this.action = action;
+            this.item = item;
+            if (item!=default(Cliente))
+            {
+                _nombre = item.nombre;
+                _apellido = item.apellido;
+                _telefono = item.telefono;
+                _direccion = item.direccion;
+            }
+            
         }
         #endregion
         #region Comando
@@ -88,7 +100,7 @@ namespace ClienteRest.ViewModel
             conf.Title = "Error";
             if (String.IsNullOrEmpty(nombre))
             {
-                await UserDialogs.Instance.ConfirmAsync(conf.Message="El nombre no puede quedar vacio");
+                await UserDialogs.Instance.ConfirmAsync(conf.Message = "El nombre no puede quedar vacio");
                 return;
             }
             if (String.IsNullOrEmpty(apellido))
@@ -115,19 +127,41 @@ namespace ClienteRest.ViewModel
                 email = "abc",
                 fecha_nacimiento = DateTime.Now
             };
-            var resp = await api.Post<Cliente>("Clientes",oCli);
-            if (!resp)
+            if (action.Equals("Agregar"))
             {
-                conf.Message = "No se ha podido agregar el cliente";
-                conf.Title = "Error";
-                await UserDialogs.Instance.ConfirmAsync(conf);
-                return;
+                var resp = await api.Post<Cliente>("Clientes", oCli);
+                if (!resp)
+                {
+                    conf.Message = "No se ha podido agregar el cliente";
+                    conf.Title = "Error";
+                    await UserDialogs.Instance.ConfirmAsync(conf);
+                    return;
+                }
+                conf.Message = "El cliente ha sido agregado exitosamente";
+                conf.Title = "Exito";
+                
             }
-            conf.Message="El cliente ha sido agregado exitosamente";
-            conf.Title = "Exito";
+            else
+            {
+                item.nombre = nombre;
+                item.apellido = apellido;
+                item.telefono = telefono;
+                item.direccion = direccion;
+                bool resp = await api.Put<Cliente>("Clientes/", item.id_Cliente, item);
+                if (!resp)
+                {
+                    conf.Message = "No se ha podido actualizar el cliente";
+                    conf.Title = "Error";
+                    await UserDialogs.Instance.ConfirmAsync(conf);
+                    return;
+                }
+                conf.Message = "El cliente ha sido actualizado exitosamente";
+                conf.Title = "Exito";
+            }
             await UserDialogs.Instance.ConfirmAsync(conf);
             App.Current.MainPage = new NavigationPage(new MainPage());
         }
+            
         #endregion
     }
 }

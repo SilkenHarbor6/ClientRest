@@ -35,7 +35,7 @@
           "lib/net45/System.Windows.Interactivity.dll": {}
         }
       },
-      "NETStandard.Library/2.0.1": {
+      "NETStandard.Library/2.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
@@ -57,6 +57,18 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Rg.Plugins.Popup/1.1.5.188": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.5.0.121934"
+        },
+        "compile": {
+          "lib/netstandard1.0/Rg.Plugins.Popup.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Rg.Plugins.Popup.dll": {}
         }
       },
       "Xam.Plugin.Connectivity/3.2.0": {
@@ -94,15 +106,15 @@
   },
   "libraries": {
     "Acr.UserDialogs/7.0.4": {
-      "sha512": "wmeQhteQymYgTwDPSxfuLlWP8qkXKSCcMB0UNQi/SXl4/vvqwzsX3uP5A7kYzxsbthuFWau3Ni0ZyCL7pyb5Fw==",
+      "sha512": "J+3+rSVtAAUqvaXC0NGZ6HAcSXMaMyqvKsV1sMoraT7g+Zv/r4QmgUUITPu875n0uO57Y87Xn6IbLVDPje6tlw==",
       "type": "package",
       "path": "acr.userdialogs/7.0.4",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "acr.userdialogs.7.0.4.nupkg.sha512",
         "acr.userdialogs.nuspec",
         "lib/monoandroid81/Acr.UserDialogs.dll",
-        "lib/monoandroid81/Acr.UserDialogs.dll.mdb",
         "lib/monoandroid81/Acr.UserDialogs.pdb",
         "lib/monoandroid90/Acr.UserDialogs.dll",
         "lib/monoandroid90/Acr.UserDialogs.pdb",
@@ -122,10 +134,11 @@
       ]
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "a/iSwnRZb+LHFk49hQOyThh/ZNC3vsbZsF65XwQIb863qF6msmhdQtxGXFL28Ob2NsCz/drEj28BJd/YPpLRBg==",
+      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
@@ -136,10 +149,11 @@
       ]
     },
     "MvvmLightLibs/5.4.1.1": {
-      "sha512": "3VCzGx0spwiuOIUR5vx0ysdnIPEKhAf3+j8tjoUVP1d69WiVWtTc7aBNt1DTsF4afGWjoSxSeq5Ulguk+PESgA==",
+      "sha512": "xYpVzOYnIz/M6T0pdc3w5t0vrt2ZKspSS+CZjQ+pZE+5yHv9qXSWkncHJXb6D7Egstalso4ivnIUkA1xEClViw==",
       "type": "package",
       "path": "mvvmlightlibs/5.4.1.1",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "lib/SL5/GalaSoft.MvvmLight.Extras.dll",
         "lib/SL5/GalaSoft.MvvmLight.Extras.pdb",
@@ -254,15 +268,14 @@
         "mvvmlightlibs.nuspec"
       ]
     },
-    "NETStandard.Library/2.0.1": {
-      "sha512": "dYgVYk+xpF1HsQCQwfXb7JPt+lovQvTsvDUI5wKbxB2A31xbzNLj6u7bz9xyd/rE50OopkdzhCh4IzJzH1fkpw==",
+    "NETStandard.Library/2.0.3": {
+      "sha512": "st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
       "type": "package",
-      "path": "netstandard.library/2.0.1",
+      "path": "netstandard.library/2.0.3",
       "files": [
-        ".signature.p7s",
+        ".nupkg.metadata",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
-        "build/NETStandard.Library.targets",
         "build/netstandard2.0/NETStandard.Library.targets",
         "build/netstandard2.0/ref/Microsoft.Win32.Primitives.dll",
         "build/netstandard2.0/ref/System.AppContext.dll",
@@ -379,15 +392,16 @@
         "build/netstandard2.0/ref/netstandard.dll",
         "build/netstandard2.0/ref/netstandard.xml",
         "lib/netstandard1.0/_._",
-        "netstandard.library.2.0.1.nupkg.sha512",
+        "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
     },
     "Newtonsoft.Json/12.0.2": {
-      "sha512": "mtweBXPWhp1CMQATtBT7ZfMZrbZBTKfjGwz6Y75NwGjx/GztDaUnfw8GK9KZ2T4fDIqKJyDjc9Rxlw5+G2FcVA==",
+      "sha512": "rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
       "type": "package",
       "path": "newtonsoft.json/12.0.2",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.md",
         "lib/net20/Newtonsoft.Json.dll",
@@ -412,17 +426,48 @@
         "newtonsoft.json.nuspec"
       ]
     },
+    "Rg.Plugins.Popup/1.1.5.188": {
+      "sha512": "PE7uHJ/LuI5pSO1HpgjJ+v2KhNfftzqt/L1AoGH/5mX0fP7pcW6lG4FbUHuCFKolrzJfLLotuuET+hfN50Whpg==",
+      "type": "package",
+      "path": "rg.plugins.popup/1.1.5.188",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid/Rg.Plugins.Popup.Droid.dll",
+        "lib/MonoAndroid/Rg.Plugins.Popup.Droid.dll.mdb",
+        "lib/MonoAndroid/Rg.Plugins.Popup.Droid.pdb",
+        "lib/MonoAndroid/Rg.Plugins.Popup.dll",
+        "lib/MonoAndroid/Rg.Plugins.Popup.pdb",
+        "lib/MonoTouch/Rg.Plugins.Popup.IOS.dll",
+        "lib/MonoTouch/Rg.Plugins.Popup.IOS.pdb",
+        "lib/MonoTouch/Rg.Plugins.Popup.dll",
+        "lib/MonoTouch/Rg.Plugins.Popup.pdb",
+        "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.dll",
+        "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.pdb",
+        "lib/Xamarin.IOS/Rg.Plugins.Popup.dll",
+        "lib/Xamarin.IOS/Rg.Plugins.Popup.pdb",
+        "lib/netstandard1.0/Rg.Plugins.Popup.dll",
+        "lib/netstandard1.0/Rg.Plugins.Popup.pdb",
+        "lib/uap10.0/Rg.Plugins.Popup.UWP.dll",
+        "lib/uap10.0/Rg.Plugins.Popup.UWP.pdb",
+        "lib/uap10.0/Rg.Plugins.Popup.dll",
+        "lib/uap10.0/Rg.Plugins.Popup.pdb",
+        "readme.txt",
+        "rg.plugins.popup.1.1.5.188.nupkg.sha512",
+        "rg.plugins.popup.nuspec"
+      ]
+    },
     "Xam.Plugin.Connectivity/3.2.0": {
-      "sha512": "V0IKUjLnWO4zl1VI/7Keclez5kk21PIpVUqacbMtbl1Ky7PrUNUOrO8Xmfrxn5E38ihzrmgGpuC6TXCwL3Sl+Q==",
+      "sha512": "ZV45TaBTCJg7XQNEl3fPyyJcuMMhdDEQ6BCLc/5pMuTv38M226ER0WTu5sbmba8jlliDuzeRqkRFHwrGdWAgyg==",
       "type": "package",
       "path": "xam.plugin.connectivity/3.2.0",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "lib/MonoAndroid10/Plugin.Connectivity.Abstractions.dll",
         "lib/MonoAndroid10/Plugin.Connectivity.Abstractions.pdb",
         "lib/MonoAndroid10/Plugin.Connectivity.Abstractions.xml",
         "lib/MonoAndroid10/Plugin.Connectivity.dll",
-        "lib/MonoAndroid10/Plugin.Connectivity.dll.mdb",
         "lib/MonoAndroid10/Plugin.Connectivity.pdb",
         "lib/MonoAndroid10/Plugin.Connectivity.xml",
         "lib/UAP10/Plugin.Connectivity.Abstractions.dll",
@@ -480,10 +525,11 @@
       ]
     },
     "Xamarin.Forms/3.0.0.482510": {
-      "sha512": "JVMTkR2/I6ujURllaBmXQAE8Cxg0Q1xHopuDVKohG1Hn3afsZx4Y4fMElVOXVBziewKVW3i8QBes5Pl5p48Tmw==",
+      "sha512": "kq209d8qVvulrY3o+nGirENZ3kaZpEN7VWRErWcW1M+ahtDgm4BUXQJ5s9hnp1SAGxQMTMhDAVI3uk5g9NV7hA==",
       "type": "package",
       "path": "xamarin.forms/3.0.0.482510",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "build/netstandard1.0/Mono.Cecil.Mdb.dll",
         "build/netstandard1.0/Mono.Cecil.Pdb.dll",
@@ -512,13 +558,11 @@
         "lib/MonoAndroid10/Design/Xamarin.Forms.Core.Design.dll",
         "lib/MonoAndroid10/Design/Xamarin.Forms.Xaml.Design.dll",
         "lib/MonoAndroid10/FormsViewGroup.dll",
-        "lib/MonoAndroid10/FormsViewGroup.dll.mdb",
         "lib/MonoAndroid10/FormsViewGroup.pdb",
         "lib/MonoAndroid10/Xamarin.Forms.Core.dll",
         "lib/MonoAndroid10/Xamarin.Forms.Core.pdb",
         "lib/MonoAndroid10/Xamarin.Forms.Core.xml",
         "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.dll",
-        "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.dll.mdb",
         "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.pdb",
         "lib/MonoAndroid10/Xamarin.Forms.Platform.dll",
         "lib/MonoAndroid10/Xamarin.Forms.Xaml.dll",
@@ -634,31 +678,35 @@
     ".NETStandard,Version=v2.0": [
       "Acr.UserDialogs >= 7.0.4",
       "MvvmLightLibs >= 5.4.1.1",
-      "NETStandard.Library >= 2.0.1",
+      "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 12.0.2",
+      "Rg.Plugins.Popup >= 1.1.5.188",
       "Xam.Plugin.Connectivity >= 3.2.0",
       "Xamarin.Forms >= 3.0.0.482510"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bryan.palmafgksa\\.nuget\\packages\\": {},
+    "C:\\Users\\bryan\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bryan.palmafgksa\\Desktop\\Xamarin\\ClienteRest\\ClienteRest\\ClienteRest\\ClienteRest.csproj",
+      "projectUniqueName": "E:\\Documents\\ClientRest\\ClienteRest\\ClienteRest\\ClienteRest.csproj",
       "projectName": "ClienteRest",
-      "projectPath": "C:\\Users\\bryan.palmafgksa\\Desktop\\Xamarin\\ClienteRest\\ClienteRest\\ClienteRest\\ClienteRest.csproj",
-      "packagesPath": "C:\\Users\\bryan.palmafgksa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bryan.palmafgksa\\Desktop\\Xamarin\\ClienteRest\\ClienteRest\\ClienteRest\\obj\\",
+      "projectPath": "E:\\Documents\\ClientRest\\ClienteRest\\ClienteRest\\ClienteRest.csproj",
+      "packagesPath": "C:\\Users\\bryan\\.nuget\\packages\\",
+      "outputPath": "E:\\Documents\\ClientRest\\ClienteRest\\ClienteRest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\bryan.palmafgksa\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\bryan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
@@ -692,12 +740,16 @@
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[2.0.1, )",
+            "version": "[2.0.3, )",
             "autoReferenced": true
           },
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[12.0.2, )"
+          },
+          "Rg.Plugins.Popup": {
+            "target": "Package",
+            "version": "[1.1.5.188, )"
           },
           "Xam.Plugin.Connectivity": {
             "target": "Package",
@@ -721,7 +773,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "El paquete \"MvvmLightLibs 5.4.1.1\" se restauró con \".NETFramework,Version=v4.6.1\" en lugar de la plataforma de destino del proyecto \".NETStandard,Version=v2.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "message": "Package 'MvvmLightLibs 5.4.1.1' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "MvvmLightLibs",
       "targetGraphs": [
         ".NETStandard,Version=v2.0"

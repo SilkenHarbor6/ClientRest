@@ -15,5 +15,6 @@ namespace ClienteRest
 			InitializeComponent();
             BindingContext = new MainPageViewModel();
 		}
-	}
+        
+    }
 }

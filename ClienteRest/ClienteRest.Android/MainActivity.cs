@@ -17,6 +17,7 @@ namespace ClienteRest.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
             Acr.UserDialogs.UserDialogs.Init(this);
+            Rg.Plugins.Popup.Popup.Init(this, bundle);
             base.OnCreate(bundle);
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
