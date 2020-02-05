@@ -19,16 +19,6 @@ namespace ClienteRest.Service
         public HttpClient cliente = new HttpClient();
         public async Task<Response> GetAll<T>(String Controller)
         {
-            var wifi = Plugin.Connectivity.Abstractions.ConnectionType.WiFi;
-            var connectionTypes = CrossConnectivity.Current.ConnectionTypes;
-            if (!connectionTypes.Contains(wifi))
-            {
-                return new Response
-                {
-                    isSuccess = false,
-                    Message= "No posee conexion a internet"
-                };
-            }
             try
             {
                 Loading();
